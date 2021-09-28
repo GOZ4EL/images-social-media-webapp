@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
 from .models import Profile
-from .forms import LoginForm, UserREgistrationForm
+from .forms import LoginForm, UserRegistrationForm
 
 
 def user_login(request):
@@ -38,7 +38,7 @@ def dashboard(request):
 
 def register(request):
     if request.method == 'POST':
-        user_form = UserREgistrationForm(request.POST)
+        user_form = UserRegistrationForm(request.POST)
         if user_form.is_valid():
             new_user = user_form.save(commit=False)
             new_user.set_password(
