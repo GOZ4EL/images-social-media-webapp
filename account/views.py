@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
+from .models import Profile
 from .forms import LoginForm, UserREgistrationForm
 
 
@@ -43,6 +44,9 @@ def register(request):
             new_user.set_password(
                 user_form.cleaned_data['password'])
             new_user.save()
+            
+            Profile.objects.create(user=new_user)
+
             return render(request,
                           'account/register_done.html',
                           {'new_user': new_user})
