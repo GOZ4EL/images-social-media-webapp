@@ -64,3 +64,5 @@ cover/
 # Translations
 *.mo
 
+# Security certificate for development
+cert.*
