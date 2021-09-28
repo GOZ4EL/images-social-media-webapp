@@ -32,7 +32,7 @@ class ImageCreateForm(forms.ModelForm):
                          save=False)
         if commit:
             image.save()
-        return imae
+        return image
 
     class Meta:
         model = Image
