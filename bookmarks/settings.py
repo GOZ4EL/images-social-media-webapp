@@ -16,6 +16,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-82uj%0qw7p=$k8q85(8boytt1)4@c(@4&yux*y#mk4g6a4^*1)'
 
+
+# Social authentication keys
+
+# Facebook
+SOCIAL_AUTH_FACEBOOK_KEY = '283450400058769' # FAcebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'c50579ccb9d9902de0f69372aca177d2'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
