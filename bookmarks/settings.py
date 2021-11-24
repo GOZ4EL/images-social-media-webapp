@@ -5,6 +5,8 @@ import os
 
 from pathlib import Path
 
+from django.urls import reverse_lazy
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,6 +78,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "bookmarks.wsgi.application"
 
+ABSOLUTE_URL_OVERRIDES = {
+    "auth.user": lambda u: reverse_lazy("user_detail", args=[u.username])
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
