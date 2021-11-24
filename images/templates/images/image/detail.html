@@ -10,8 +10,7 @@
     <img src="{% thumbnail image.image 300x0 quality=100 %}" class="image-detail">
   </a>
 
-  {% with total_likes=image.users_like.count
-          users_like=image.users_like.all %}
+  {% with total_likes=image.users_like.count users_like=image.users_like.all %}
     <div class="image-info">
 	    <div>
 		    <span class="count">
